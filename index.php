@@ -10,12 +10,37 @@ $wilco_shows = shows();?>
       foreach($wilco_shows as $concerts){
         // change sql date_time to Mon 01, Year format
         $date = $concerts[0];
+		$city = $concerts[1];
+		$venue = $concerts[2];
         echo "<tr><td>" .
         $date .
         "</td><td>" .
-        $concerts[1] .
+        $city .
 		"</td><td>" .
-        $concerts[2] .
+        $venue .
+        "</td></tr>";
+      }
+      ?>
+    </table>
+    </div>
+</div>
+
+<?php
+$wilco_setlist = setlist();
+?>
+
+<div>
+  <h2>Carbondale Setlist</h2>
+    <div>
+      <table>
+      <?php
+      foreach($wilco_setlist as $songs){
+        $order = $songs[0];
+		$song_title = $songs[1];
+        echo "<tr><td>" .
+        $order .
+        "</td><td>" .
+        $song_title .
         "</td></tr>";
       }
       ?>
