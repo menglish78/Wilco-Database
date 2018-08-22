@@ -7,8 +7,22 @@
 			
 			$(".show_more_link").click(function(){
 				var_show_id = $(this).closest('.show_table').find("#show_id").val();
-				$("#hidden_div_"+var_show_id).toggle();
+				//$("#hidden_div_"+var_show_id).toggle();
 				//alert(var_show_id);
+				
+				$.ajax({
+					type: "POST",
+					url: "ajax_setlist.php",
+					data: { 
+						show_id: var_show_id
+					},
+					success: function(result) {
+						console.log(result);
+					},
+					error: function(result) {
+						alert(result+'!!!');
+					}
+				});
 			});
 		});
 	</script>
@@ -53,26 +67,5 @@ $wilco_shows = shows();?>
 		</div>
 	</div>
 
-	<?php
-	$wilco_setlist = setlist();
-	?>
-
-<!--	<div>
-	  <h2>Carbondale Setlist</h2>
-		<div>
-		  <table>
-		  // <?php
-		  // foreach($wilco_setlist as $songs){
-			// $order = $songs[0];
-			// $song_title = $songs[1];
-			// echo "<tr><td>" .
-			// $order .
-			// "</td><td>" .
-			// $song_title .
-			// "</td></tr>";
-		  // }
-		  // ?>
-		</table>
-		</div>
-	</div>
-</body> -->
+	
+</body>
