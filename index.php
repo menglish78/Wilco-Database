@@ -3,7 +3,13 @@
 	<link rel="stylesheet" href="css/styles.css">
 	<script>
 		$(document).ready(function(){
+			//var_show_id = $("#show_id").val();
 			
+			$(".show_more_link").click(function(){
+				var_show_id = $(this).closest('.show_table').find("#show_id").val();
+				$("#hidden_div_"+var_show_id).toggle();
+				//alert(var_show_id);
+			});
 		});
 	</script>
 </head>
@@ -19,27 +25,31 @@ $wilco_shows = shows();?>
 		</div>
 	</div>
 	<div>
-	  <h2>WILCO SHOWS</h2>
-		<div>
-		  <table>
+	  <div>
 		  <?php
 		  foreach($wilco_shows as $concerts){
-			$date = date_create($concerts[0]);
+			$show_id = $concerts[0];
+			$date = date_create($concerts[1]);
 			$date_format = date_format($date, "M j, Y");
-			$city = $concerts[1];
-			$venue = $concerts[2];
-			echo "<tr><td>" .
+			$city = $concerts[2];
+			$venue = $concerts[3];
+			echo "<table class='show_table'><tr><td>" .
+			"<input type='hidden' id='show_id' value='".$show_id."'>" .
+			"</td></tr>" .
+			"<tr><td>" .
 			$date_format.
 			"</td><td>" .
 			$city .
 			"</td><td>" .
 			$venue .
 			"</td><td>".
-			"XXX". //will be icon to click for more info on show
-			"</td></tr>";
+			"<a href='#' id='show_more_".$show_id."' class='show_more_link'>X</a>".
+			"</td></tr><tr><td>" .
+			"<div id='hidden_div_".$show_id."' style='display:none'><p>HERE I AM!</p></div>" .
+			"</td></tr>" .
+			"</table>";
 		  }
 		  ?>
-		</table>
 		</div>
 	</div>
 

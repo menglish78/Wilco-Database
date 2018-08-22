@@ -4,7 +4,10 @@ function shows() {
 	//runs query for complete list of shows, puts results in variable "$results"
 	try {
 	$results = $db->query(
-	  "SELECT show_date, show_city, show_venue
+	  "SELECT show_id,
+			  show_date, 
+			  show_city, 
+			  show_venue
 	   FROM shows
 	   ORDER BY show_date ASC"
 	 );
