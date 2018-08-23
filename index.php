@@ -3,24 +3,26 @@
 	<link rel="stylesheet" href="css/styles.css">
 	<script>
 		$(document).ready(function(){
-			//var_show_id = $("#show_id").val();
-			
 			$(".show_more_link").click(function(){
 				var_show_id = $(this).closest('.show_table').find("#show_id").val();
-				//$("#hidden_div_"+var_show_id).toggle();
-				//alert(var_show_id);
-				
-				$.ajax({
+				$.ajax(
+				{
 					type: "POST",
 					url: "ajax_setlist.php",
-					data: { 
-						show_id: var_show_id
+					data: { show_id: var_show_id },
+					success: function(response)
+					{
+						if($("#hidden_div_"+var_show_id).hasClass("loaded"))
+						{
+							$("#hidden_div_"+var_show_id).toggle();
+						} else 
+						{
+							$("#hidden_div_"+var_show_id).addClass("loaded").append(response).toggle();
+						}
 					},
-					success: function(result) {
-						console.log(result);
-					},
-					error: function(result) {
-						alert(result+'!!!');
+					error: function(response) 
+					{
+						alert('Error!');
 					}
 				});
 			});
@@ -59,7 +61,7 @@ $wilco_shows = shows();?>
 			"</td><td>".
 			"<a href='#' id='show_more_".$show_id."' class='show_more_link'>X</a>".
 			"</td></tr><tr><td>" .
-			"<div id='hidden_div_".$show_id."' style='display:none'><p>HERE I AM!</p></div>" .
+			"<div id='hidden_div_".$show_id."' style='display:none'></div>" .
 			"</td></tr>" .
 			"</table>";
 		  }
