@@ -10,7 +10,9 @@ function setlist()
 	try 
 	{
 		$full_setlist = $db->query(
-			"SELECT cm.song_order, so.song_title 
+			"SELECT cm.song_order, 
+					so.song_title,
+					so.song_notes
 			 FROM concert_matrix cm 
 			 JOIN songs so on cm.song_id = so.song_id 
 			 WHERE show_id = ".$show_id
@@ -30,11 +32,25 @@ foreach($wilco_setlist as $songs)
 {
 	$order = $songs[0];
 	$song_title = $songs[1];
-	echo "<table><tr><td>" .
-	$order .
+	$song_notes = $songs[2];
+	$list = "<table><tr><td>" .
+	$order . ". " .
 	"</td><td>" .
 	$song_title .
-	"</td></tr></table>";
+	"</td><td>";
+	if($song_notes == "")
+	{
+		$notes = "";
+	}
+	else
+	{
+		$notes = "(".$song_notes.")";
+	}
+	$list .= $notes."</td></tr></table>";
+	
+	echo $list;
 }
+
+
  
 ?>
