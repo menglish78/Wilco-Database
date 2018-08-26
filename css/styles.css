@@ -7,7 +7,35 @@
 #header img {
 	display: block;
 	max-width:1000px;
-	max-height:200px;
+	max-height:100px;
+	width: auto;
+	height: auto;
+	margin: auto;
+}
+
+#wrapper_header {
+	/* background-color: yellow; */
+}
+
+#main_show_div {
+	margin: auto;
+    width: 70%;
+    padding: 10px;
+	/* background-color: white; */
+}
+
+#body_div {
+	/* background-color: red; */
+}
+
+.show_table {
+	font-family: Futura, Arial, sans-serif;
+}
+
+img#ticket_icon {
+	display: block;
+	max-width:20px;
+	max-height:20px;
 	width: auto;
 	height: auto;
 }

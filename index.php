@@ -14,10 +14,10 @@
 					{
 						if($("#hidden_div_"+var_show_id).hasClass("loaded"))
 						{
-							$("#hidden_div_"+var_show_id).toggle();
+							$("#hidden_div_"+var_show_id).toggle(500);
 						} else 
 						{
-							$("#hidden_div_"+var_show_id).addClass("loaded").append(response).toggle();
+							$("#hidden_div_"+var_show_id).addClass("loaded").append(response).toggle(500);
 						}
 					},
 					error: function(response) 
@@ -35,13 +35,13 @@ include("inc/functions.php");
 $wilco_shows = shows();?>
 
 <body>
-    <div id="wrapperHeader">
+    <div id="wrapper_header">
 		<div id="header">
 			<img src="img/wilco_logo.png" alt="logo" />
 		</div>
 	</div>
-	<div>
-	  <div>
+	<div id="body_div">
+	  <div id="main_show_div">
 		  <?php
 		  foreach($wilco_shows as $concerts){
 			$show_id = $concerts[0];
@@ -59,11 +59,11 @@ $wilco_shows = shows();?>
 			"</td><td>" .
 			$venue .
 			"</td><td>".
-			"<a href='#' id='show_more_".$show_id."' class='show_more_link'>X</a>".
+			"<a href='#' id='show_more_".$show_id."' class='show_more_link'><img src='img/ticket_icon_2.png' alt='ticket_icon' id='ticket_icon'/></a>".
 			"</td></tr><tr><td>" .
-			"<div id='hidden_div_".$show_id."' style='display:none'></div>" .
 			"</td></tr>" .
-			"</table>";
+			"</table>" .
+			"<div id='hidden_div_".$show_id."' style='display:none'></div>";
 		  }
 		  ?>
 		</div>
