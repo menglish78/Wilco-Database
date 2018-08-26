@@ -60,7 +60,7 @@ $wilco_shows = shows();?>
 			"</td><td>" .
 			$venue .
 			"</td><td>".
-			"<a href='ajax_setlist.php?show_id=".$show_id."' id='show_more_".$show_id."' class='show_more_link'><img src='img/down_arrow.png' alt='down_arrow' id='down_arrow'/></a>".
+			"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."' class='show_more_link'><img src='img/down_arrow.png' alt='down_arrow' id='down_arrow'/></a>".
 			"</td></tr><tr><td>" .
 			"</td></tr>" .
 			"</table>" .
