@@ -14,18 +14,21 @@
 }
 
 #wrapper_header {
-	/* background-color: yellow; */
+	margin: auto;
+    width: 70%;
+    padding: 10px;
+	background-color: #E3492A;
 }
 
 #main_show_div {
 	margin: auto;
     width: 70%;
     padding: 10px;
-	/* background-color: white; */
+	background-color: #F9F9F4;
 }
 
-#body_div {
-	/* background-color: red; */
+body {
+	background-color: #E3C165;
 }
 
 .show_table {

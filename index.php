@@ -35,13 +35,13 @@ include("inc/functions.php");
 $wilco_shows = shows();?>
 
 <body>
-    <div id="wrapper_header">
+<div id="body_div">
+	<div id="wrapper_header">
 		<div id="header">
 			<img src="img/wilco_logo.png" alt="logo" />
 		</div>
 	</div>
-	<div id="body_div">
-	  <div id="main_show_div">
+	<div id="main_show_div">
 		  <?php
 		  foreach($wilco_shows as $concerts){
 			$show_id = $concerts[0];
@@ -66,8 +66,8 @@ $wilco_shows = shows();?>
 			"<div id='hidden_div_".$show_id."' style='display:none'></div>";
 		  }
 		  ?>
-		</div>
 	</div>
+</div>
 
 	
 </body>
