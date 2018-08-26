@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 function setlist()
 {
 	include("inc/connect.php");
-	$show_id = $_POST['show_id'];
+	$show_id = $_GET['show_id'];
 	try 
 	{
 		$full_setlist = $db->query(
