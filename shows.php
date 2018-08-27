@@ -55,7 +55,7 @@ $wilco_shows = shows();
 						// alert('Error');
 					// }
 				// });
-			});
+			//});
 		});
 	</script>
 </head>

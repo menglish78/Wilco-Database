@@ -34,7 +34,10 @@ $wilco_setlist = setlist();
 	<link rel="stylesheet" href="css/styles.css">
 	<script>
 		$(document).ready(function(){
-			
+			// $(".song_link").click(function(){
+				// var song_title = $(this).closest('.setlist_table').find("#song_title").val();
+				// alert(song_title);
+			// });
 		});
 	</script>
 </head>
@@ -53,10 +56,11 @@ $wilco_setlist = setlist();
 		$song_id = $songs[1];
 		$song_title = $songs[2];
 		$song_notes = $songs[3];
-		$list = "<table><tr><td>" .
+		$list = "<table class='setlist_table'><tr><td>
+		<input type='hidden' id='song_title' value='".str_replace("I'm", "", $song_title)."'>" .
 		$order . ". " .
 		"</td><td>" .
-		"<a href='song_info.php?song_title=".$song_title."' id='show_more_".$song_title."'>".$song_title."</a>".
+		"<a href='song_info.php?song_title=".str_replace("I'm", "", $song_title)."' id='show_more_".$song_title."' value='".$song_title."' class='song_link'>".$song_title."</a>".
 		"</td><td>";
 		if($song_notes == "")
 		{
