@@ -19,8 +19,9 @@
 			$("#song_search").easyAutocomplete(options);
 			
 			$("#search_button").click(function(){
-				var song_title = ($("#song_search").val());
-				 $.ajax(
+				var song_title = ($("#song_search").val().replace(/I'm/g, "").split("'s").pop());
+				//replace(/\'s.*/,''));
+				$.ajax(
 				{
 					type: "GET",
 					url: "song_info.php",
