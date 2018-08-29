@@ -1,3 +1,4 @@
+<html>
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
@@ -40,25 +41,13 @@
 include("inc/functions.php");
 $wilco_shows = shows();?>
 
-<body>
-<div id="body_div">
-	<div id="wrapper_header">
-		<div id="header">
-			<a href="index.php"><img src="img/wilco_logo.png" alt="logo" /></a>
+<body id="home_body">
+	<div id="text_div">
+		<h1 id-="header_text">BEING THERE</h1>
+		<h3>A Personal Wilco Concert Database</h3>
+		<div id="main_show_div">
+			<span>Click Here for a full list of shows - OR - Search Songs</span>
 		</div>
 	</div>
-	<div id="main_show_div">
-		<table>
-			<tr><td><a href="shows.php">Click here</a> to see the full list of shows.</td></tr>
-		</table>
-		<table>
-			<tr><td>Or</td></tr>
-		</table>
-		<table>
-			<tr><td>Search Songs: </td><td><input type="text" id="song_search"></input></td><td><button id="search_button">Search</button></td></tr>
-		</table>
-	</div>
-</div>
-
-	
 </body>
+</html>

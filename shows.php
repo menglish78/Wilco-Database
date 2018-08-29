@@ -9,9 +9,10 @@ function shows() {
 	try {
 	$results = $db->query(
 	  "SELECT show_id,
-			  show_date, 
-			  show_city, 
-			  show_venue
+			  show_date,
+			  show_venue,
+			  show_city,			  
+			  show_state
 	   FROM shows
 	   ORDER BY show_date ASC"
 	 );
@@ -62,35 +63,49 @@ $wilco_shows = shows();
 <body>
 <div id="body_div">
 	<div id="wrapper_header">
-		<div id="header">
+		<!-- <div id="header">
 			<a href="index.php"><img src="img/wilco_logo.png" alt="logo" /></a>
-		</div>
+		</div> -->
 	</div>
 	<div id="main_show_div">
+	    <table class='show_table'>
+			<thead>
+				<tr>
+					<td>Date</td>
+					<td>Venue</td>
+					<td>City</td>
+				</tr>
+			</thead>
+				  
 		  <?php
 		  foreach($wilco_shows as $concerts){
 			$show_id = $concerts[0];
 			$date = date_create($concerts[1]);
 			$date_format = date_format($date, "M j, Y");
-			$city = $concerts[2];
-			$venue = $concerts[3];
-			echo "<table class='show_table'><tr><td>" .
-			"<input type='hidden' id='show_id' value='".$show_id."'>" .
-			"</td></tr>" .
-			"<tr><td>" .
-			"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."'>".$date_format."</a>".
-			"</td><td>" .
-			$city .
-			"</td><td>" .
-			$venue .
-			//"</td><td>".
-			//"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."' class='show_more_link'><img src='img/down_arrow.png' alt='down_arrow' id='down_arrow'/></a>".
-			"</td></tr><tr><td>" .
-			"</td></tr>" .
-			"</table>" .
-			"<div id='hidden_div_".$show_id."' style='display:none'></div>";
+			$venue = $concerts[2];
+			$city = $concerts[3];
+			$state = $concerts[4];
+			echo "<tbody>
+					<tr><td>" .
+					"<input type='hidden' id='show_id' value='".$show_id."'>" .
+					"</td></tr>" .
+					"<tr><td>" .
+					"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."'>".$date_format."</a>".
+					"</td><td>" .
+					$venue .
+					"</td><td>" .
+					$city .", ".$state .
+					//"</td><td>".
+					//"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."' class='show_more_link'><img src='img/down_arrow.png' alt='down_arrow' id='down_arrow'/></a>".
+					"</td></tr><tr><td>" .
+					"</td></tr>
+				  </tbody>";
+					
+					//"<div id='hidden_div_".$show_id."' style='display:none'></div>";
 		  }
 		  ?>
+		
+	    </table>
 	</div>
 </div>
 

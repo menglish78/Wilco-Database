@@ -44,9 +44,9 @@ $wilco_setlist = setlist();
 <body>
 <div id="body_div">
 	<div id="wrapper_header">
-		<div id="header">
+		<!-- <div id="header">
 			<a href="index.php"><img src="img/wilco_logo.png" alt="logo" /></a>
-		</div>
+		</div> -->
 	</div>
 	<div id="main_show_div">
 	<?php
@@ -60,7 +60,7 @@ $wilco_setlist = setlist();
 		<input type='hidden' id='song_title' value='".str_replace("I'm", "", $song_title)."'>" .
 		$order . ". " .
 		"</td><td>" .
-		"<a href='song_info.php?song_title=".str_replace(["I'm", "She's"], "", $song_title)."' id='show_more_".$song_title."' value='".$song_title."' class='song_link'>".$song_title."</a>".
+		"<a href='song_info.php?song_title=".str_replace(["I'm", "She's", "It's"], "", $song_title)."' id='show_more_".$song_title."' value='".$song_title."' class='song_link'>".$song_title."</a>".
 		"</td><td>";
 		if($song_notes == "")
 		{

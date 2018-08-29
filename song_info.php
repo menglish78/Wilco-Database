@@ -69,36 +69,52 @@ $count = song_count();
 <body>
 <div id="body_div">
 	<div id="wrapper_header">
-		<div id="header">
+		<!-- <div id="header">
 			<a href="index.php"><img src="img/wilco_logo.png" alt="logo" /></a>
-		</div>
+		</div> -->
 	</div>
 	<div id="main_show_div">
 			
 		  <?php
 		  echo "<h3>This song has been played ".$count[0]." times.</h3>";
-		  
+		  ?>
+		  <table class='show_table'>
+			<thead>
+				<tr>
+					<td>Date</td>
+					<td>Venue</td>
+					<td>City</td>
+				</tr>
+		  </thead>
+		  <?php
 		  foreach($song_information as $played_at){
 			$show_id = $played_at[0];
 			$date = date_create($played_at[1]);
 			$date_format = date_format($date, "M j, Y");
 			$city = $played_at[2];
-			$venue = $played_at[3];
-			echo "<table class='show_table'><tr><td>" .
-			"<input type='hidden' id='show_id' value='".$show_id."'>" .
-			"</td></tr>" .
-			"<tr><td>" .
-			"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."'>".$date_format."</a>".
-			"</td><td>" .
-			$city .
-			"</td><td>" .
-			$venue .
-			"</td></tr><tr><td>" .
-			"</td></tr>" .
-			"</table>" .
-			"<div id='hidden_div_".$show_id."' style='display:none'></div>";
+			$state = $played_at[3];
+			$venue = $played_at[4];
+			echo "<tbody>
+					<tr><td>" .
+					"<input type='hidden' id='show_id' value='".$show_id."'>" .
+					"</td></tr>" .
+					"<tr><td>" .
+					"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."'>".$date_format."</a>".
+					"</td><td>" .
+					$venue .
+					"</td><td>" .
+					$city .", ".$state .
+					//"</td><td>".
+					//"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."' class='show_more_link'><img src='img/down_arrow.png' alt='down_arrow' id='down_arrow'/></a>".
+					"</td></tr><tr><td>" .
+					"</td></tr>
+				  </tbody>";
+					
+					//"<div id='hidden_div_".$show_id."' style='display:none'></div>";
 		  }
 		  ?>
+		
+	    </table>
 	</div>
 </div>
 
