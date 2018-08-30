@@ -46,7 +46,7 @@ $wilco_shows = shows();?>
 		<h1 id-="header_text">BEING THERE</h1>
 		<h3>A Personal Wilco Concert Database</h3>
 		<div id="main_show_div">
-			<span>Click Here for a full list of shows - OR - Search Songs</span>
+			<span id="search_span"><a href="shows.php">Click here</a> for a full list of shows - OR - Search Songs: <button id="search_button">Search</button></span>
 		</div>
 	</div>
 </body>
