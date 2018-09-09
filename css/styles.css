@@ -27,28 +27,88 @@
     src: url(../fonts/LiberationSans-Regular.ttf);
 }
 
-#main_show_div {
+#search_container {
+	padding-top: 350px;
+}
+
+#search_div {
 	width: 80%; 
-	margin: 25px auto; 
+	margin:  25px auto; 
 	padding: 30px; 
 	background: #fafeff; 
 	-moz-box-shadow: 0 0 20px black; 
 	-webkit-box-shadow: 0 0 20px black; 
 	box-shadow: 0 0 20px black;
 	font-family: 'LiberationSans';
-	
+	text-align: center;
 }
 
-#main_show_div span {
-	position: relative;
-	float: left;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+#search_div form {
+    overflow: hidden;
+    display: block;
+	margin: auto;
+}
+
+#search_div form label {
+    margin-top:12px;
+    font-size: 1.15em;
+    color: #333333;
+    /* font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif; */
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+#search_div form input {
+    border: 1px solid #DDDDDD;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -khtml-border-radius: 0px;
+    -webkit-border-radius: 0px;
+}
+
+
+#search_div form input[type='text']{
+    width: 22%;
+    display: inline!important;
+    background: #F9F9F9;
+    /* font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;  */
+    font-size: 1.1em;
+    line-height: 1.4;
+    padding: 6px;
+}
+
+#main_show_div {
+	width: 80%; 
+	margin:  25px auto; 
+	padding: 30px; 
+	background: #fafeff; 
+	-moz-box-shadow: 0 0 20px black; 
+	-webkit-box-shadow: 0 0 20px black; 
+	box-shadow: 0 0 20px black;
+	font-family: 'LiberationSans';
+	text-align: center;
+}
+
+#main_show_div table {
+	width: 80%;
+	border-collapse: collapse;
+}
+
+#main_show_div tr:hover {
+	background-color: #f5f5f5;
+}
+
+th, td {
+	padding: 7.5px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
 }
 
 body { 
-    background: url('../img/wilco_tix.png') no-repeat center center fixed;
+    background: url('../img/wilco_tix (2).png') no-repeat center center fixed;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -69,24 +129,10 @@ h1 {
 	font-weight: lighter;
 	margin: auto;
 	text-align: center;
-	padding-top: 350px;
+	/* padding-top: 350px; */
 	text-shadow: 5px 5px 5px rgba(0,0,0, 1);
-	}
+	letter-spacing: 3px;
 }
-
-
-
-/* html {  */
-  /* background: url(../img/wilco_tix.png) no-repeat center center fixed;  */
-  /* -webkit-background-size: cover; */
-  /* -moz-background-size: cover; */
-  /* -o-background-size: cover; */
-  /* background-size: cover; */
-/* } */
-
-
-
-
 
 a {
     color: #FF5A0D;
@@ -97,14 +143,3 @@ a:visited {
 	color: #ff8850;
 }
 
-/* .show_table { */
-	/* font-family: Futura, Arial, sans-serif; */
-/* } */
-
-/* img#down_arrow { */
-	/* display: block; */
-	/* max-width:20px; */
-	/* max-height:20px; */
-	/* width: auto; */
-	/* height: auto; */
-/* } */

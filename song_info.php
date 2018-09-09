@@ -39,7 +39,8 @@ function song_count() {
 	//$safe_title = htmlspecialchars_decode($song_title);
 	try {
 	$results = $db->query(
-	  "select count(*) as times_played
+	  "select count(*) as times_played,
+	          s.song_title
 	   from concert_matrix cm
 	   join songs s on cm.song_id = s.song_id
 	   where s.song_title LIKE '%".$song_title."%'"
@@ -76,14 +77,15 @@ $count = song_count();
 	<div id="main_show_div">
 			
 		  <?php
-		  echo "<h3>This song has been played ".$count[0]." times.</h3>";
+		  echo "<h3>".$count[1]."</h3>
+				<h4>This song has been played ".$count[0]." times.</h4>";
 		  ?>
 		  <table class='show_table'>
 			<thead>
 				<tr>
-					<td>Date</td>
-					<td>Venue</td>
-					<td>City</td>
+					<th>Date</th>
+					<th>Venue</th>
+					<th>City</th>
 				</tr>
 		  </thead>
 		  <?php
@@ -96,17 +98,12 @@ $count = song_count();
 			$venue = $played_at[4];
 			echo "<tbody>
 					<tr><td>" .
-					"<input type='hidden' id='show_id' value='".$show_id."'>" .
-					"</td></tr>" .
-					"<tr><td>" .
-					"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."'>".$date_format."</a>".
+					"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."'>".$date_format."</a>
+					<input type='hidden' id='show_id' value='".$show_id."'>".
 					"</td><td>" .
 					$venue .
 					"</td><td>" .
 					$city .", ".$state .
-					//"</td><td>".
-					//"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."' class='show_more_link'><img src='img/down_arrow.png' alt='down_arrow' id='down_arrow'/></a>".
-					"</td></tr><tr><td>" .
 					"</td></tr>
 				  </tbody>";
 					

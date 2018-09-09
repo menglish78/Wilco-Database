@@ -16,7 +16,7 @@ function setlist()
 					so.song_notes
 			 FROM concert_matrix cm 
 			 JOIN songs so on cm.song_id = so.song_id 
-			 WHERE show_id = ".$show_id
+			 WHERE cm.show_id = ".$show_id
 		    );	
 	} catch (Exception $e) 
 	{
@@ -27,7 +27,30 @@ function setlist()
 	return $setlist;
 }
 
+function show_info() {
+    include("inc/connect.php");
+	$show_id = $_GET['show_id'];
+	try {
+		$show_head = $db->query(
+		  "select show_date,
+		          show_venue,
+				  show_city,
+				  show_state
+		   from shows
+		   where show_id = ".$show_id
+	 );
+	} catch (Exception $e) {
+	echo "Unable to retrieve results";
+	exit;
+	}
+	
+	$show_info = $show_head->fetch();
+	return $show_info;
+}
+
 $wilco_setlist = setlist();
+$show = show_info();
+
 ?>
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -49,6 +72,18 @@ $wilco_setlist = setlist();
 		</div> -->
 	</div>
 	<div id="main_show_div">
+		<?php
+		  $date = date_create($show[0]);
+		  $date_format = date_format($date, "M j, Y");
+		  $venue = $show[1];
+		  $city = $show[2];
+		  $state = $show[3];
+		  echo "<h3>".$venue."</h3>
+				<h3>".$city.", ".$state."</h3>
+				<h4>".$date_format."</h4>";
+		 ?>
+		<table class="setlist_table">
+			<tbody>
 	<?php
 	foreach($wilco_setlist as $songs)
 	{
@@ -56,11 +91,11 @@ $wilco_setlist = setlist();
 		$song_id = $songs[1];
 		$song_title = $songs[2];
 		$song_notes = $songs[3];
-		$list = "<table class='setlist_table'><tr><td>
-		<input type='hidden' id='song_title' value='".str_replace("I'm", "", $song_title)."'>" .
+		$list = "
+		<tr><td>" .
 		$order . ". " .
 		"</td><td>" .
-		"<a href='song_info.php?song_title=".str_replace(["I'm", "She's", "It's"], "", $song_title)."' id='show_more_".$song_title."' value='".$song_title."' class='song_link'>".$song_title."</a>".
+		"<a href='song_info.php?song_title=".str_replace(["I'm", "She's", "It's"], "", $song_title)."' id='show_more_".$song_title."' value='".$song_title."' class='song_link'>".$song_title."</a><input type='hidden' id='song_title' value='".str_replace("I'm", "", $song_title)."'>".
 		"</td><td>";
 		if($song_notes == "")
 		{
@@ -70,11 +105,13 @@ $wilco_setlist = setlist();
 		{
 			$notes = "(".$song_notes.")";
 		}
-		$list .= $notes."</td></tr></table>";
+		$list .= $notes."</td></tr>";
 		
 		echo $list;
 	}
 	?>
+	</tbody>
+	</table>
 	<table>
 		<tr><td><a href="shows.php">Back</a> to list of shows.</td></tr>
 	</table>

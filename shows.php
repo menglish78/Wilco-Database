@@ -71,9 +71,9 @@ $wilco_shows = shows();
 	    <table class='show_table'>
 			<thead>
 				<tr>
-					<td>Date</td>
-					<td>Venue</td>
-					<td>City</td>
+					<th>Date</th>
+					<th>Venue</th>
+					<th>City</th>
 				</tr>
 			</thead>
 				  
@@ -87,17 +87,12 @@ $wilco_shows = shows();
 			$state = $concerts[4];
 			echo "<tbody>
 					<tr><td>" .
-					"<input type='hidden' id='show_id' value='".$show_id."'>" .
-					"</td></tr>" .
-					"<tr><td>" .
-					"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."'>".$date_format."</a>".
+					"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."'>".$date_format."</a>
+					<input type='hidden' id='show_id' value='".$show_id."'>".
 					"</td><td>" .
 					$venue .
 					"</td><td>" .
 					$city .", ".$state .
-					//"</td><td>".
-					//"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."' class='show_more_link'><img src='img/down_arrow.png' alt='down_arrow' id='down_arrow'/></a>".
-					"</td></tr><tr><td>" .
 					"</td></tr>
 				  </tbody>";
 					
