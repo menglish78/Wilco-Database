@@ -1,6 +1,6 @@
 <?php
 
-// $song_title = $_GET['song_title'];
+$song_title = $_GET['song_title'];
 // $safe_title = htmlspecialchars_decode($song_title);
 // echo $song_title;
 

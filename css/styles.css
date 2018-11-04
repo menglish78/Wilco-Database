@@ -3,7 +3,7 @@
 }
 
 @font-face {
-    font-family: Hansief;
+    font-family: 'Hansief';
     src: url(../fonts/Hansief.otf);
 }
 
@@ -27,7 +27,152 @@
     src: url(../fonts/LiberationSans-Regular.ttf);
 }
 
-#search_container {
+#main_show_div {
+	width: 80%; 
+	margin:  25px auto; 
+	padding: 30px; 
+	background: #fafeff; 
+	-moz-box-shadow: 0 0 20px black; 
+	-webkit-box-shadow: 0 0 20px black; 
+	box-shadow: 0 0 20px black;
+	font-family: 'LiberationSans';
+	text-align: center;
+}
+
+#main_show_div table {
+	width: 80%;
+	border-collapse: collapse;
+}
+
+#main_show_div tr:nth-child(even) {
+	background-color: #e6faff;
+}
+
+#main_show_div tr:hover {
+	background-color: #b3f0ff;
+}
+
+th, td {
+	padding: 7.5px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
+#home_body { 
+    background: url('../img/wilco_tix_3.png') no-repeat center center fixed;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} 
+
+#click_shows {
+	font-family: 'LeagueSpartan';
+	font-size: 1.5rem;
+	margin: auto;
+	text-align: center;
+}
+
+h3 {
+	font-family: 'LeagueSpartan';
+	font-size: 2rem;
+	margin: auto;
+	text-align: center;
+}
+
+h1 {
+	font-family: 'Hansief';
+	color: #0aa6c9;
+	font-size: 12rem;
+	font-weight: lighter;
+	margin: auto;
+	text-align: center;
+	padding-top: 325px;
+	text-shadow: 5px 5px 5px rgba(0,0,0, 1);
+	letter-spacing: 3px;
+}
+
+
+a {
+    color: #ff4100;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #ff4100;
+}
+
+#search_bar {
+	width: 80%;
+	margin: auto;
+}
+
+form.search_form input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: none;
+    float: left;
+    width: 80%;
+    background: #ecf4f9;
+}
+
+form.search_form button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #0AA6C9;
+    color: white;
+    font-size: 20px;
+    border: none;
+    /* border-left: none; */
+    cursor: pointer;
+}
+
+form.search_form button:hover {
+    background: #0AA6C9;
+}
+
+form.search_form::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+/* 
+.header {
+	background: url('../img/wilco_tix.png') no-repeat center;
+	margin: auto;
+}
+
+.header a, a:visited {
+	font-family: 'Hansief';
+	text-shadow: 3px 3px 3px rgba(0,0,0, .7);
+  text-decoration: none;
+}
+
+.navigation li {
+	font-size: 1.5em;
+	font-weight: bolder;
+	list-style: none;
+	text-shadow: 1px 1px 1px rgba(0,0,0, .7);
+	display: inline-block;
+}
+
+.navigation a {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.page-header {
+	font-size: 5em;
+	text-align: left;
+} */
+
+
+/* #search_container {
 	padding-top: 350px;
 }
 
@@ -53,7 +198,7 @@
     margin-top:12px;
     font-size: 1.15em;
     color: #333333;
-    /* font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif; */
+    font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif; 
     font-weight: normal;
     line-height: 1.2;
 }
@@ -74,72 +219,8 @@
     width: 22%;
     display: inline!important;
     background: #F9F9F9;
-    /* font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;  */
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; 
     font-size: 1.1em;
     line-height: 1.4;
     padding: 6px;
-}
-
-#main_show_div {
-	width: 80%; 
-	margin:  25px auto; 
-	padding: 30px; 
-	background: #fafeff; 
-	-moz-box-shadow: 0 0 20px black; 
-	-webkit-box-shadow: 0 0 20px black; 
-	box-shadow: 0 0 20px black;
-	font-family: 'LiberationSans';
-	text-align: center;
-}
-
-#main_show_div table {
-	width: 80%;
-	border-collapse: collapse;
-}
-
-#main_show_div tr:hover {
-	background-color: #f5f5f5;
-}
-
-th, td {
-	padding: 7.5px;
-	text-align: left;
-	border-bottom: 1px solid #ddd;
-}
-
-body { 
-    background: url('../img/wilco_tix (2).png') no-repeat center center fixed;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-} 
-
-h3 {
-	font-family: 'LeagueSpartan';
-	font-size: 2rem;
-	margin: auto;
-	text-align: center;
-}
-
-h1 {
-	font-family: 'Hansief';
-	color: #0aa6c9;
-	font-size: 12rem;
-	font-weight: lighter;
-	margin: auto;
-	text-align: center;
-	/* padding-top: 350px; */
-	text-shadow: 5px 5px 5px rgba(0,0,0, 1);
-	letter-spacing: 3px;
-}
-
-a {
-    color: #FF5A0D;
-	text-decoration: none;
-}
-
-a:visited {
-	color: #ff8850;
-}
-
+} */
