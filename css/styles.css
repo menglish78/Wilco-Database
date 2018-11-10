@@ -40,7 +40,7 @@
 }
 
 #main_show_div table {
-	width: 80%;
+	width: 100%;
 	border-collapse: collapse;
 }
 
@@ -140,6 +140,10 @@ form.search_form::after {
     content: "";
     clear: both;
     display: table;
+}
+
+form.song_form {
+	margin-bottom: 0px;
 }
 /* 
 .header {

@@ -95,7 +95,7 @@ $show = show_info();
 		<tr><td>" .
 		$order . ". " .
 		"</td><td>" .
-		"<a href='song_info.php?song_title=".str_replace(["I'm", "She's", "It's"], "", $song_title)."' id='show_more_".$song_title."' value='".$song_title."' class='song_link'>".$song_title."</a><input type='hidden' id='song_title' value='".str_replace("I'm", "", $song_title)."'>".
+		"<a href='song_info.php?song_title=".$song_title."' id='show_more_".$song_title."' value='".$song_title."' class='song_link'>".$song_title."</a><input type='hidden' id='song_title' value='".$song_title."'>".
 		"</td><td>";
 		if($song_notes == "")
 		{

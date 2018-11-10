@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 
 function song_stats() {
     include("inc/connect.php");
-	$song_title = addslashes($_POST['song_title']);
+	$song_title = addslashes($_GET['song_title']);
 	//$safe_title = htmlspecialchars_decode($song_title);
 	try {
 	$results = $db->query(
@@ -35,7 +35,7 @@ function song_stats() {
 
 function song_count() {
     include("inc/connect.php");
-	$song_title = addslashes($_POST['song_title']);
+	$song_title = addslashes($_GET['song_title']);
 	//$safe_title = htmlspecialchars_decode($song_title);
 	try {
 	$results = $db->query(
