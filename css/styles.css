@@ -32,9 +32,9 @@
 	margin:  25px auto; 
 	padding: 30px; 
 	background: #fafeff; 
-	-moz-box-shadow: 0 0 20px black; 
+	/* -moz-box-shadow: 0 0 20px black; 
 	-webkit-box-shadow: 0 0 20px black; 
-	box-shadow: 0 0 20px black;
+	box-shadow: 0 0 20px black; */
 	font-family: 'LiberationSans';
 	text-align: center;
 }

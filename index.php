@@ -6,19 +6,9 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script>
 		$(document).ready(function(){			
-			$("#search_button").click(function(){
-				var song_title = ($("#song_search").val().replace(/I'm/g, "").split("'s").pop());
-				//replace(/\'s.*/,''));
-				$.ajax(
-				{
-					type: "GET",
-					url: "song_info.php",
-					data: { song_title: song_title },
-					success: function(response)
-					{
-						window.location = "song_info.php?song_title="+song_title;
-					}
-				});
+			$("#search_form").on("submit", function(){
+				var song_title = ($("#song_title").val().replace(/I'm/g, "").split("'s").pop());
+				console.log(song_title);
 			});
 		});
 	</script>
@@ -30,8 +20,8 @@ $wilco_shows = shows();?>
 
 <body id="home_body">
 	<div id="search_bar">
-		<form class="search_form">
-		  <input type="text" placeholder="Search songs..." name="song_search" id="song_search">
+		<form class="search_form" id="search_form" method="post" action="song_info.php">
+		  <input type="text" placeholder="Search songs..." name="song_title" id="song_title">
 		  <button type="submit" id="search_button"><i class="fa fa-search"></i></button>
 		</form>
 	</div> 
