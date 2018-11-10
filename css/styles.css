@@ -145,6 +145,18 @@ form.search_form::after {
 form.song_form {
 	margin-bottom: 0px;
 }
+
+#main_show_div a {
+	color: black;
+}
+
+#main_show_div a:visited {
+	color: black;
+}
+
+#main_show_div a:hover {
+	color: #ff4100;
+}
 /* 
 .header {
 	background: url('../img/wilco_tix.png') no-repeat center;
