@@ -3,6 +3,8 @@
 ini_set('display_errors', 1); 
 error_reporting(E_ALL);
 
+include("inc/header.php");
+
 function shows() {
     include("inc/connect.php");
 	//runs query for complete list of shows, puts results in variable "$results"
@@ -28,45 +30,6 @@ $wilco_shows = shows();
 
 ?>
 
-<head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="css/styles.css">
-	<script>
-		$(document).ready(function(){
-			//$(".show_more_link").click(function(){
-				// var_show_id = $(this).closest('.show_table').find("#show_id").val();
-				// $.ajax(
-				// {
-					// type: "POST",
-					// url: "ajax_setlist.php",
-					// data: { show_id: var_show_id },
-					// success: function(response)
-					// {
-						//window.location = "ajax_setlist.php";
-						// if($("#hidden_div_"+var_show_id).hasClass("loaded"))
-						// {
-							// $("#hidden_div_"+var_show_id).toggle(500);
-						// } else 
-						// {
-							// $("#hidden_div_"+var_show_id).addClass("loaded").append(response).toggle(500);
-						// }
-					// },
-					// error: function(response) 
-					// {
-						// alert('Error');
-					// }
-				// });
-			//});
-		});
-	</script>
-</head>
-<body>
-<div id="body_div">
-	<div id="wrapper_header">
-		<!-- <div id="header">
-			<a href="index.php"><img src="img/wilco_logo.png" alt="logo" /></a>
-		</div> -->
-	</div>
 	<div id="main_show_div">
 	    <table class='show_table'>
 			<thead>

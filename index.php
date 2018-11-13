@@ -10,7 +10,6 @@
 				$(".search_form").submit(false);
 				//var song_title = ($("#song_search").val().replace(/I'm/g, "").split("'s").pop());
 				var song_title = $("#song_search").val();
-				//replace(/\'s.*/,''));
 				$.ajax(
 				{
 					type: "GET",
@@ -46,30 +45,3 @@ $wilco_shows = shows();?>
 	</div>
 </body>
 </html>
-
-
-
-<!-- <div id="main_show_div">
-			<form action="includes/contact.php" method="post">
-				<div class="search">
-					<label for="song_search"><a>Click Here</a> to see a list of all shows  - OR - Search Songs: </label>
-					<input name="song_search" id="song_search" type="text" />
-					<button id="search_button">Search</button>
-				</div>
-			</form> 
-		</div> 
-		
-	 <div id="search_container">		
-	<div id="search_div">
-		<form>
-			<div class="search">
-				<label for="song_search"><a href="shows.php">Click Here</a> to see a list of all shows  - OR - Search Songs: </label>
-				<input name="song_search" class="song_search" id="song_search" type="text" />  
-				<button id="search_button">Search</button>
-			</div>
-		</form> 
-	</div>
-</div>
-		
-		
-		-->

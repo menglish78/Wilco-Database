@@ -3,6 +3,8 @@
 ini_set('display_errors', 1); 
 error_reporting(E_ALL);
 
+include("inc/header.php");
+
 function setlist()
 {
 	include("inc/connect.php");
@@ -52,19 +54,7 @@ $wilco_setlist = setlist();
 $show = show_info();
 
 ?>
-<head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="css/styles.css">
-	<script>
-		$(document).ready(function(){
-			// $(".song_link").click(function(){
-				// var song_title = $(this).closest('.setlist_table').find("#song_title").val();
-				// alert(song_title);
-			// });
-		});
-	</script>
-</head>
-<body>
+
 <div id="body_div">
 	<div id="wrapper_header">
 		<!-- <div id="header">

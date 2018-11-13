@@ -48,7 +48,7 @@
 	background-color: #e6faff;
 }
 
-#main_show_div tr:hover {
+#main_show_div tbody tr:hover {
 	background-color: #b3f0ff;
 }
 
@@ -87,7 +87,7 @@ h1 {
 	font-weight: lighter;
 	margin: auto;
 	text-align: center;
-	padding-top: 325px;
+	padding-top: 300px;
 	text-shadow: 5px 5px 5px rgba(0,0,0, 1);
 	letter-spacing: 3px;
 }
@@ -157,6 +157,12 @@ form.song_form {
 #main_show_div a:hover {
 	color: #ff4100;
 }
+
+.header {
+	background-color: #0aa6c9;
+	height: 100px;
+}
+
 /* 
 .header {
 	background: url('../img/wilco_tix.png') no-repeat center;
