@@ -54,26 +54,19 @@ $wilco_setlist = setlist();
 $show = show_info();
 
 ?>
-
-<div id="body_div">
-	<div id="wrapper_header">
-		<!-- <div id="header">
-			<a href="index.php"><img src="img/wilco_logo.png" alt="logo" /></a>
-		</div> -->
-	</div>
-	<div id="main_show_div">
-		<?php
-		  $date = date_create($show[0]);
-		  $date_format = date_format($date, "M j, Y");
-		  $venue = $show[1];
-		  $city = $show[2];
-		  $state = $show[3];
-		  echo "<h3>".$venue."</h3>
-				<h3>".$city.", ".$state."</h3>
-				<h4>".$date_format."</h4>";
-		 ?>
-		<table class="setlist_table">
-			<tbody>
+<div id="main_show_div">
+	<?php
+	  $date = date_create($show[0]);
+	  $date_format = date_format($date, "M j, Y");
+	  $venue = $show[1];
+	  $city = $show[2];
+	  $state = $show[3];
+	  echo "<h3>".$venue."</h3>
+			<h3>".$city.", ".$state."</h3>
+			<h4>".$date_format."</h4>";
+	 ?>
+	<table class="setlist_table">
+		<tbody>
 	<?php
 	foreach($wilco_setlist as $songs)
 	{
@@ -100,7 +93,7 @@ $show = show_info();
 		echo $list;
 	}
 	?>
-	</tbody>
+		</tbody>
 	</table>
 	<table>
 		<tr><td><a href="shows.php">Back</a> to list of shows.</td></tr>

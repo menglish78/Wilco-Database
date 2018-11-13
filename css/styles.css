@@ -163,6 +163,24 @@ form.song_form {
 	height: 100px;
 }
 
+.header p {
+	font-family: 'Hansief';
+	font-size: 2rem;
+	text-align: center;
+	margin-top: 25px;
+}
+
+#header_link {
+	float: left;
+	padding: 5px;
+	height: 100px;
+	width: 300px;
+}
+
+.header a:hover {
+	text-decoration: none;
+}
+
 /* 
 .header {
 	background: url('../img/wilco_tix.png') no-repeat center;

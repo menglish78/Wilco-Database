@@ -5,6 +5,8 @@
 </head>
 <body>
   <div class="header">
-    <p class="page-header"><a href="../Wilco-Database">BEING THERE</a></p>
+	  <div id="header_link">
+		<p><a href="../Wilco-Database">BEING THERE</a></p>
+	  </div>
   </div>
   
