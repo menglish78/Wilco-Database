@@ -6,7 +6,7 @@
 <body>
   <div class="header">
 	  <div id="header_link">
-		<p><a href="../Wilco-Database">BEING THERE</a></p>
+		<a href="../Wilco-Database">BEING THERE</a>
 	  </div>
   </div>
   

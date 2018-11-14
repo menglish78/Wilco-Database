@@ -27,11 +27,17 @@
     src: url(../fonts/LiberationSans-Regular.ttf);
 }
 
+body {
+	margin: 0px;
+	background: #fafeff;
+	/* background-image: linear-gradient(to bottom right, #ccf5ff, #fafeff); */
+}
+
 #main_show_div {
-	width: 80%; 
+	width: 60%; 
 	margin:  25px auto; 
 	padding: 30px; 
-	background: #fafeff; 
+	/* background: #fafeff;  */
 	/* -moz-box-shadow: 0 0 20px black; 
 	-webkit-box-shadow: 0 0 20px black; 
 	box-shadow: 0 0 20px black; */
@@ -44,22 +50,22 @@
 	border-collapse: collapse;
 }
 
-#main_show_div tr:nth-child(even) {
+/* #main_show_div tr:nth-child(even) {
 	background-color: #e6faff;
-}
+} */
 
 #main_show_div tbody tr:hover {
-	background-color: #b3f0ff;
+	background-color: #e7fafe;
 }
 
 th, td {
 	padding: 7.5px;
 	text-align: left;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #b3d9ff;
 }
 
 #home_body { 
-    background: url('../img/wilco_tix_3.png') no-repeat center center fixed;
+    background: url('../img/wilco_tix_2.png') no-repeat center center fixed;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -83,18 +89,18 @@ h3 {
 h1 {
 	font-family: 'Hansief';
 	color: #0aa6c9;
-	font-size: 12rem;
+	font-size: 10rem;
 	font-weight: lighter;
 	margin: auto;
 	text-align: center;
 	padding-top: 300px;
-	text-shadow: 5px 5px 5px rgba(0,0,0, 1);
+	text-shadow: 3px 3px 3px rgba(0,0,0, .5);
 	letter-spacing: 3px;
 }
 
 
 a {
-    color: #ff4100;
+    color: #FF5A0D;
 	text-decoration: none;
 }
 
@@ -103,12 +109,12 @@ a:hover {
 }
 
 a:visited {
-	color: #ff4100;
+	color: #FF5A0D;
 }
 
 #search_bar {
-	width: 80%;
-	margin: auto;
+	width: 50%;
+	margin: 10px auto;
 }
 
 form.search_form input[type=text] {
@@ -133,7 +139,7 @@ form.search_form button {
 }
 
 form.search_form button:hover {
-    background: #0AA6C9;
+    background: #FF5A0D;
 }
 
 form.search_form::after {
@@ -155,26 +161,25 @@ form.song_form {
 }
 
 #main_show_div a:hover {
-	color: #ff4100;
+	color: #FF5A0D;
 }
 
 .header {
-	background-color: #0aa6c9;
-	height: 100px;
-}
-
-.header p {
-	font-family: 'Hansief';
-	font-size: 2rem;
-	text-align: center;
-	margin-top: 25px;
+	background: url('../img/wilco_header.png') no-repeat center;
+	/* background-color: #0aa6c9; */
+	height: 75px;
 }
 
 #header_link {
 	float: left;
-	padding: 5px;
-	height: 100px;
-	width: 300px;
+	font-family: 'Hansief';
+	font-size: 2.5rem;
+	text-align: center;
+	padding: 10px 15px;
+}
+
+.header a {
+	color: #0aa6c9;
 }
 
 .header a:hover {

@@ -41,7 +41,8 @@ $wilco_shows = shows();
 		</thead>
 			  
 	  <?php
-	  foreach($wilco_shows as $concerts){
+	  foreach($wilco_shows as $concerts)
+	  {
 		$show_id = $concerts[0];
 		$date = date_create($concerts[1]);
 		$date_format = date_format($date, "M j, Y");
@@ -50,16 +51,14 @@ $wilco_shows = shows();
 		$state = $concerts[4];
 		echo "<tbody>
 				<tr><td>" .
-				"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."'>".$date_format."</a>
-				<input type='hidden' id='show_id' value='".$show_id."'>".
+				$date_format .
 				"</td><td>" .
-				$venue .
+				"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."'>".$venue."</a>
+				<input type='hidden' id='show_id' value='".$show_id."'>".
 				"</td><td>" .
 				$city .", ".$state .
 				"</td></tr>
 			  </tbody>";
-				
-				//"<div id='hidden_div_".$show_id."' style='display:none'></div>";
 	  }
 	  ?>
 	

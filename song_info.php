@@ -81,10 +81,10 @@ $count = song_count();
 			$venue = $played_at[4];
 			echo "<tbody>
 					<tr><td>" .
-					"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."'>".$date_format."</a>
-					<input type='hidden' id='show_id' value='".$show_id."'>".
+					$date_format .
 					"</td><td>" .
-					$venue .
+					"<a href='setlist.php?show_id=".$show_id."' id='show_more_".$show_id."'>".$venue."</a>
+					<input type='hidden' id='show_id' value='".$show_id."'>".
 					"</td><td>" .
 					$city .", ".$state .
 					"</td></tr>
