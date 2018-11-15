@@ -55,6 +55,7 @@ $show = show_info();
 
 ?>
 <div id="main_show_div">
+	<div id="title_div">
 	<?php
 	  $date = date_create($show[0]);
 	  $date_format = date_format($date, "M j, Y");
@@ -65,6 +66,7 @@ $show = show_info();
 			<h3>".$city.", ".$state."</h3>
 			<h4>".$date_format."</h4>";
 	 ?>
+	</div>
 	<table class="setlist_table">
 		<tbody>
 	<?php

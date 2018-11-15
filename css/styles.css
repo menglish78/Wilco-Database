@@ -29,20 +29,26 @@
 
 body {
 	margin: 0px;
-	background: #fafeff;
+	background: #F3F3F2 ;
 	/* background-image: linear-gradient(to bottom right, #ccf5ff, #fafeff); */
 }
 
 #main_show_div {
 	width: 60%; 
-	margin:  25px auto; 
+	margin: auto; 
 	padding: 30px; 
 	/* background: #fafeff;  */
 	/* -moz-box-shadow: 0 0 20px black; 
 	-webkit-box-shadow: 0 0 20px black; 
 	box-shadow: 0 0 20px black; */
-	font-family: 'LiberationSans';
+	font-family: 'Open Sans', sans-serif;
 	text-align: center;
+	color: #36393B;
+}
+
+#title_div {
+	font-family: 'Roboto', sans-serif;
+	color: #131820 ;
 }
 
 #main_show_div table {
@@ -55,13 +61,14 @@ body {
 } */
 
 #main_show_div tbody tr:hover {
-	background-color: #e7fafe;
+	background-color: #CEEDF4;
 }
 
 th, td {
 	padding: 7.5px;
 	text-align: left;
-	border-bottom: 1px solid #b3d9ff;
+	border-bottom: 1px solid #131820   ;
+	color: #36393B;
 }
 
 #home_body { 
@@ -73,34 +80,54 @@ th, td {
 } 
 
 #click_shows {
-	font-family: 'LeagueSpartan';
-	font-size: 1.5rem;
-	margin: auto;
-	text-align: center;
-}
-
-h3 {
-	font-family: 'LeagueSpartan';
+	font-family: 'Roboto', sans-serif;
 	font-size: 2rem;
 	margin: auto;
 	text-align: center;
+	color: #131820 ; 
+	padding-top: 30px;
+}
+
+h3 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 2rem;
+	margin: auto;
+	text-align: center;
+	color: #131820 ; 
+}
+
+#name_div h3 {
+	font-family: 'Hansief';
+	font-weight: lighter;
+	font-size: 2rem;
+	margin: -25px auto auto auto;
+	text-align: center;
+	color: #131820 ; 
 }
 
 h1 {
 	font-family: 'Hansief';
 	color: #0aa6c9;
-	font-size: 10rem;
+	font-size: 12rem;
 	font-weight: lighter;
 	margin: auto;
 	text-align: center;
-	padding-top: 300px;
-	text-shadow: 3px 3px 3px rgba(0,0,0, .5);
-	letter-spacing: 3px;
+	padding-top: 250px;
+	text-shadow: 3px 3px 3px rgba(0,0,0, .7);
+	/* letter-spacing: 3px; */
 }
 
+p {
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	font-size: 1.5rem;
+	margin: auto;
+	text-align: center;
+	color: #131820 ; 
+}
 
 a {
-    color: #FF5A0D;
+    color: #F4360B ;
 	text-decoration: none;
 }
 
@@ -109,15 +136,17 @@ a:hover {
 }
 
 a:visited {
-	color: #FF5A0D;
+	color: #F4360B ;
 }
 
 #search_bar {
-	width: 50%;
-	margin: 10px auto;
+	width: 40%;
+	margin: 30px auto;
 }
 
 form.search_form input[type=text] {
+	font-family: 'Roboto', sans-serif;
+	font-weight: lighter;
     padding: 10px;
     font-size: 17px;
     border: none;
@@ -139,7 +168,7 @@ form.search_form button {
 }
 
 form.search_form button:hover {
-    background: #FF5A0D;
+    background: #F4360B ;
 }
 
 form.search_form::after {
@@ -153,29 +182,31 @@ form.song_form {
 }
 
 #main_show_div a {
-	color: black;
+	color: #36393B;
 }
 
 #main_show_div a:visited {
-	color: black;
+	color: #36393B;
 }
 
 #main_show_div a:hover {
-	color: #FF5A0D;
+	color: #F4360B ;
 }
 
 .header {
-	background: url('../img/wilco_header.png') no-repeat center;
+	background: url('../img/wilco_header_sm.jpg') no-repeat center;
 	/* background-color: #0aa6c9; */
-	height: 75px;
+	height: 180px;
+	width: 100%;
 }
 
 #header_link {
 	float: left;
 	font-family: 'Hansief';
-	font-size: 2.5rem;
+	font-size: 4rem;
 	text-align: center;
 	padding: 10px 15px;
+	text-shadow: 2px 2px 2px rgba(0,0,0, .3);
 }
 
 .header a {
@@ -184,6 +215,11 @@ form.song_form {
 
 .header a:hover {
 	text-decoration: none;
+}
+
+#separator {
+	height: 1px;
+	background-color: #0aa6c9;
 }
 
 /* 

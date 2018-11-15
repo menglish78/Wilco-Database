@@ -36,12 +36,12 @@ $wilco_shows = shows();?>
 		  <button id="search_button"><i class="fa fa-search"></i></button>
 		</form>
 	</div> 
-	<div>
+	<div id="name_div">
 		<h1 id-="header_text">BEING THERE</h1>
-		<h3>A Personal Wilco Concert Database</h3>
-		<div id="click_shows">
-			<p><a href="shows.php">Click here</a> to see a list of all shows.</p>
-		</div>
+		<h3>A PERSONAL WILCO CONCERT DATABASE</h3>
+	</div>
+	<div id="click_shows">
+		<p><a href="shows.php">Click here</a> to see a list of all shows.</p>
 	</div>
 </body>
 </html>

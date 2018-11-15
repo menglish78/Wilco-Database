@@ -57,6 +57,7 @@ $count = song_count();
 ?>
 
 <div id="main_show_div">
+	<div id="title_div">
 	 <?php
 	  if ($count[0] > 0)
 	  {
@@ -70,6 +71,7 @@ $count = song_count();
 			echo "<h4>This song has been played ".$count[0]." times.</h4>";
 		}
 		  ?>
+	</div>	  
 		  <table class='show_table'>
 			<thead>
 				<tr>
