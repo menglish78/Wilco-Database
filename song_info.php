@@ -62,15 +62,7 @@ $count = song_count();
 	  if ($count[0] > 0)
 	  {
 		echo "<h3>".$count[1]."</h3>";
-		if ($count[0] == 1)
-		{
-			echo "<h4>This song has been played ".$count[0]." time.</h4>";
-		}
-		else 
-		{
-			echo "<h4>This song has been played ".$count[0]." times.</h4>";
-		}
-		  ?>
+	?>
 	</div>	  
 		  <table class='show_table'>
 			<thead>
@@ -104,6 +96,19 @@ $count = song_count();
 		  ?>
 		
 		</table>
+	</div>	
+	<div id="stats_div">
+		<?
+		if ($count[0] == 1)
+		{
+			echo "<h4>This song has been played ".$count[0]." time.</h4>";
+		}
+		else 
+		{
+			echo "<h4>This song has been played ".$count[0]." times.</h4>";
+		}
+		?>
+	</div>
 	  <?php
 	  }
 	  else
@@ -112,5 +117,5 @@ $count = song_count();
 			  <a href='javascript:history.back(1);'>Go Back</a>";
 	  }
 	  ?>
-</div>	
+
 </body>

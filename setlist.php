@@ -100,7 +100,8 @@ $show = show_info();
 	<table>
 		<tr><td><a href="shows.php">Back</a> to list of shows.</td></tr>
 	</table>
-	</div>
+</div>
+<div id="stats_div">
 </div>
 
 	

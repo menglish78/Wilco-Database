@@ -35,6 +35,7 @@ body {
 
 #main_show_div {
 	width: 60%; 
+	float: left;
 	margin: auto; 
 	padding: 30px; 
 	/* background: #fafeff;  */
@@ -44,6 +45,11 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	text-align: center;
 	color: #36393B;
+}
+
+#stats_div {
+	float:right;
+	width: 40%;
 }
 
 #title_div {
@@ -61,7 +67,7 @@ body {
 } */
 
 #main_show_div tbody tr:hover {
-	background-color: #CEEDF4;
+	background-color: #d5f0f6;
 }
 
 th, td {
@@ -112,7 +118,7 @@ h1 {
 	font-weight: lighter;
 	margin: auto;
 	text-align: center;
-	padding-top: 250px;
+	padding-top: 275px;
 	text-shadow: 3px 3px 3px rgba(0,0,0, .7);
 	/* letter-spacing: 3px; */
 }
@@ -203,10 +209,10 @@ form.song_form {
 #header_link {
 	float: left;
 	font-family: 'Hansief';
-	font-size: 4rem;
+	font-size: 5rem;
 	text-align: center;
-	padding: 10px 15px;
-	text-shadow: 2px 2px 2px rgba(0,0,0, .3);
+	padding: 25px 20px;
+	text-shadow: 2px 2px 2px rgba(0,0,0, .5);
 }
 
 .header a {

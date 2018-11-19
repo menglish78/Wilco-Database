@@ -64,4 +64,6 @@ $wilco_shows = shows();
 	
 	</table>
 </div>
+<div id="stats_div">
+</div>
 </body>
