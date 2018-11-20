@@ -26,7 +26,29 @@ function shows() {
 	return $shows;
 }
 
+function song_rank() {
+    include("inc/connect.php");
+	//runs query for complete list of shows, puts results in variable "$results"
+	try {
+	$results = $db->query(
+	  "SELECT cm.song_id, COUNT(*) AS magnitude,
+			   s.song_title
+		FROM concert_matrix cm
+		JOIN songs s ON cm.song_id = s.song_id
+		GROUP BY cm.song_id 
+		ORDER BY magnitude DESC
+		LIMIT 10"
+	 );
+	} catch (Exception $e) {
+	echo "Unable to retrieve results";
+	exit;
+	}
+	$song_rank = $results->fetchALL();
+	return $song_rank;
+}
+
 $wilco_shows = shows();
+$top_songs = song_rank();
 
 ?>
 
@@ -65,5 +87,41 @@ $wilco_shows = shows();
 	</table>
 </div>
 <div id="stats_div">
+	<table id="rank_table">
+		<thead>
+			<tr>
+				<th>Most Played Songs</th>
+			</tr>
+		</thead>
+		<?php
+		  foreach($top_songs as $most_played)
+		  {
+			$song = $most_played[2];
+			$count = $most_played[1];
+			$song_id = $most_played[0];
+			echo "<tbody>
+					<tr><td>" .
+						"<a href='song_info.php?song_title=".$song."' id='show_more_".$song."' value='".$song."' class='song_link'>".$song."</a> (".$count.")<input type='hidden' id='song' value='".$song."'>".
+					"</td></tr>
+				  </tbody>";
+		  }
+		  ?>
+	</table>
 </div>
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

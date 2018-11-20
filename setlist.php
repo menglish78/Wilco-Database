@@ -14,8 +14,7 @@ function setlist()
 		$full_setlist = $db->query(
 			"SELECT cm.song_order, 
 			        cm.song_id,
-					so.song_title,
-					so.song_notes
+					so.song_title
 			 FROM concert_matrix cm 
 			 JOIN songs so on cm.song_id = so.song_id 
 			 WHERE cm.show_id = ".$show_id
@@ -54,19 +53,18 @@ $wilco_setlist = setlist();
 $show = show_info();
 
 ?>
-<div id="main_show_div">
-	<div id="title_div">
+<div id="title_div">
 	<?php
 	  $date = date_create($show[0]);
 	  $date_format = date_format($date, "M j, Y");
 	  $venue = $show[1];
 	  $city = $show[2];
 	  $state = $show[3];
-	  echo "<h3>".$venue."</h3>
-			<h3>".$city.", ".$state."</h3>
-			<h4>".$date_format."</h4>";
+	  echo "<h3>".$venue." - ".$city.", ".$state."</h3>".
+		   "<h3>".$date_format."</h3>";
 	 ?>
-	</div>
+</div>
+<div id="main_show_div">
 	<table class="setlist_table">
 		<tbody>
 	<?php
@@ -75,22 +73,12 @@ $show = show_info();
 		$order = $songs[0];
 		$song_id = $songs[1];
 		$song_title = $songs[2];
-		$song_notes = $songs[3];
 		$list = "
 		<tr><td>" .
 		$order . ". " .
 		"</td><td>" .
 		"<a href='song_info.php?song_title=".$song_title."' id='show_more_".$song_title."' value='".$song_title."' class='song_link'>".$song_title."</a><input type='hidden' id='song_title' value='".$song_title."'>".
 		"</td><td>";
-		if($song_notes == "")
-		{
-			$notes = "";
-		}
-		else
-		{
-			$notes = "(".$song_notes.")";
-		}
-		$list .= $notes."</td></tr>";
 		
 		echo $list;
 	}
@@ -102,6 +90,7 @@ $show = show_info();
 	</table>
 </div>
 <div id="stats_div">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis mauris aliquam, semper lacus ut, facilisis lorem. Pellentesque viverra nisi vel ligula fermentum, nec ultrices sem dignissim. Pellentesque euismod nibh eu dolor dapibus, at cursus leo mattis. Morbi id enim eu urna commodo bibendum sed ut metus. Nunc vel feugiat nisi. Quisque gravida nibh dolor, id vestibulum eros convallis quis. Maecenas id efficitur turpis, vel tincidunt lorem. Nunc venenatis felis a ultricies ornare. Nunc nec diam vehicula, sollicitudin diam ac, pellentesque ipsum. Integer nec risus odio. Donec augue metus, aliquam eu justo quis, tincidunt lobortis eros.</p>
 </div>
 
 	

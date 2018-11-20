@@ -50,11 +50,14 @@ body {
 #stats_div {
 	float:right;
 	width: 40%;
+	margin: auto; 
+	padding: 30px; 
 }
 
 #title_div {
 	font-family: 'Roboto', sans-serif;
 	color: #131820 ;
+	padding: 30px;
 }
 
 #main_show_div table {
@@ -73,7 +76,7 @@ body {
 th, td {
 	padding: 7.5px;
 	text-align: left;
-	border-bottom: 1px solid #131820   ;
+	border-bottom: 1px solid #131820;
 	color: #36393B;
 }
 
@@ -130,6 +133,22 @@ p {
 	margin: auto;
 	text-align: center;
 	color: #131820 ; 
+}
+
+#stats_div p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+	font-size: medium;
+	text-align: left;
+	padding: 3px;
+}
+
+#rank_table {
+	font-family: 'Open Sans', sans-serif;
+}
+
+#rank_table td {
+	border-bottom: none;
 }
 
 a {

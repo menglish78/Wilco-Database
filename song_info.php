@@ -55,15 +55,15 @@ function song_count() {
 $song_information = song_stats();
 $count = song_count();
 ?>
-
-<div id="main_show_div">
-	<div id="title_div">
+<div id="title_div">
 	 <?php
 	  if ($count[0] > 0)
 	  {
 		echo "<h3>".$count[1]."</h3>";
 	?>
-	</div>	  
+	</div>	
+<div id="main_show_div">
+	  
 		  <table class='show_table'>
 			<thead>
 				<tr>
@@ -101,13 +101,16 @@ $count = song_count();
 		<?
 		if ($count[0] == 1)
 		{
-			echo "<h4>This song has been played ".$count[0]." time.</h4>";
+			echo "<p>This song has been played ".$count[0]." time</p>";
 		}
 		else 
 		{
-			echo "<h4>This song has been played ".$count[0]." times.</h4>";
+			echo "<p>This song has been played ".$count[0]." times</p>";
 		}
 		?>
+		<p>Appears on the album: Album Name</p>
+		<p>First played: 00/00/00</p>
+		<p>Last played: 00/00/00</p>
 	</div>
 	  <?php
 	  }
