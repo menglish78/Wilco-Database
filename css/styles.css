@@ -117,7 +117,7 @@ h3 {
 h1 {
 	font-family: 'Hansief';
 	color: #0aa6c9;
-	font-size: 12rem;
+	font-size: 11rem;
 	font-weight: lighter;
 	margin: auto;
 	text-align: center;
@@ -221,7 +221,7 @@ form.song_form {
 .header {
 	background: url('../img/wilco_header_sm.jpg') no-repeat center;
 	/* background-color: #0aa6c9; */
-	height: 180px;
+	height: 150px;
 	width: 100%;
 }
 

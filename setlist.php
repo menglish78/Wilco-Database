@@ -36,7 +36,8 @@ function show_info() {
 		  "select show_date,
 		          show_venue,
 				  show_city,
-				  show_state
+				  show_state,
+				  show_notes
 		   from shows
 		   where show_id = ".$show_id
 	 );
@@ -60,6 +61,7 @@ $show = show_info();
 	  $venue = $show[1];
 	  $city = $show[2];
 	  $state = $show[3];
+	  $show_notes = $show[4];
 	  echo "<h3>".$venue." - ".$city.", ".$state."</h3>".
 		   "<h3>".$date_format."</h3>";
 	 ?>
@@ -90,7 +92,7 @@ $show = show_info();
 	</table>
 </div>
 <div id="stats_div">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis mauris aliquam, semper lacus ut, facilisis lorem. Pellentesque viverra nisi vel ligula fermentum, nec ultrices sem dignissim. Pellentesque euismod nibh eu dolor dapibus, at cursus leo mattis. Morbi id enim eu urna commodo bibendum sed ut metus. Nunc vel feugiat nisi. Quisque gravida nibh dolor, id vestibulum eros convallis quis. Maecenas id efficitur turpis, vel tincidunt lorem. Nunc venenatis felis a ultricies ornare. Nunc nec diam vehicula, sollicitudin diam ac, pellentesque ipsum. Integer nec risus odio. Donec augue metus, aliquam eu justo quis, tincidunt lobortis eros.</p>
+<p><?php echo $show_notes ?></p>
 </div>
 
 	
