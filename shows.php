@@ -51,7 +51,8 @@ $wilco_shows = shows();
 $top_songs = song_rank();
 
 ?>
-
+<div id="title_div">
+</div>
 <div id="main_show_div">
 	<table class='show_table'>
 		<thead>
