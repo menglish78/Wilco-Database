@@ -1,15 +1,36 @@
 <?php
 	ini_set('display_errors', 1); 
 	error_reporting(E_ALL);
+	
+	include("inc/functions.php");
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto|Roboto+Condensed" rel="stylesheet">
 <script>
+	$(document).ready(function(){			
+		$("#search_button").click(function(){
+			$(".search_form").submit(false);
+			//var song_title = ($("#song_search").val().replace(/I'm/g, "").split("'s").pop());
+			var song_title = $("#song_search").val();
+			$.ajax(
+			{
+				type: "GET",
+				url: "song_info.php",
+				data: { song_title: song_title },
+				success: function(response)
+				{
+					window.location = "song_info.php?song_title="+song_title;
+				}
+			});
+		});
+	});
 </script>
 <style>
 	@font-face {
@@ -79,17 +100,6 @@
 		font-family: 'Morganite-Light', sans-serif;
 	}
 	
-	h3 {
-		font-size: 2rem;
-		margin: 0px;
-	}
-	
-	h4 {
-		font-size: 1.5rem;
-		color: #fff;
-		margin: 0px 0px 10px
-	}
-	
 	#arrow_container {
 		position:absolute;
 		width: 50px;
@@ -109,25 +119,74 @@
 	
 	#about_div {
 		background-color: #2c2c2c;
-		font-family: 'Lato', sans-serif;
+		padding: 50px 80px;
+	}
+	
+	#about_head {
+		font-family: 'Roboto Condensed', sans-serif;
+		font-size: 2rem;
+		font-weight: 100;
+		font-style: normal;
 		color: #ce9e62;
+		margin: 0px;
 		text-align: center;
+		padding-bottom: 10px;
+	}
+	
+	#about_hr {
+		width: 100%;
+		border: 0;
+		height: 1px;
+		background: #005995;
+	}
+	
+	#about_text {
+		text-align: justify;
+		font-family: 'Open Sans', sans-serif;
+		color: #f3f3f3;
+		padding-top: 10px;
 	}
 	
 	#search_div {
-		padding: 20px 0px 40px;
+		padding: 50px 80px;
 		background-color: #2c2c2c;
 		font-family: 'Lato', sans-serif;
 		text-align: center;
 	}
 	
-	.example {
+	#search_head {
+		font-family: 'Roboto Condensed', sans-serif;
+		font-size: 1.75rem;
+		font-weight: 100;
+		font-style: normal;
+		color: #F4360B;
+		margin: 0px;
+		padding-bottom: 20px;
+	}
+	
+	#footer_div {
+		height: 45px;
+		background-color: #005995;
+		text-align: center;
+	}
+	
+	#footer_info {
+		padding-top: 5px;
+		margin: 0px;
+		font-family: 'Roboto Condensed', sans-serif;
+		font-size: 1rem;
+		font-weight: 100;
+		font-style: normal;
+		color: #ce9e62;
+	}
+	
+	.search_form {
 		width: 70%;
 		margin: auto;
 	}
 
 	/* Style the search field */
-	form.example input[type=text] {
+	form.search_form input[type=text] {
 	  padding: 10px;
 	  font-size: 17px;
 	  border: none;
@@ -137,11 +196,11 @@
 	}
 
 	/* Style the submit button */
-	form.example button {
+	form.search_form button {
 	  float: left;
 	  width: 20%;
 	  padding: 10px;
-	  background: #F4360B ;
+	  background: #005995 ;
 	  color: white;
 	  font-size: 17px;
 	  border: none;
@@ -149,12 +208,12 @@
 	  cursor: pointer;
 	}
 
-	form.example button:hover {
-	  background: #f77255;
+	form.search_form button:hover {
+	  background: #008ae6;
 	}
 
 	/* Clear floats */
-	form.example::after {
+	form.search_form::after {
 	  content: "";
 	  clear: both;
 	  display: table;
@@ -194,24 +253,26 @@
 		</div>
 	</div>
 	<div id="about_div">
-		<h3>A Personal Wilco Concert Database</h3>
+		<p id="about_head">A Personal Wilco Concert Database</p>
+		<hr id="about_hr"/>
+		<p id="about_text">My name is Matt. My wife Lindsay and I really enjoy seeing Wilco perform live. We've been lucky enough to see them quite a few times. We've gone to shows with friends, family and, of course, a lot of strangers who happen to also love seeing Wilco live. We've seen a couple of different line-ups of the band and we've seen Jeff Tweedy solo and with his "family band" Tweedy. I think it's safe to say, we've never been disappointed. We thought it would be nice to have some sort of chronicle of these experiences. That's what this site is. It's a way for us to preserve and catalog our experiences with our favorite band.</p>
 	</div>
 	<div id="all_shows_div">
 	<table>
-		<tr><td>Stuff</td></tr>
-		<tr><td>Stuff</td></tr>
-		<tr><td>Stuff</td></tr>
-		<tr><td>Stuff</td></tr>
+		<tr><td>List of all shows will go here.</td></tr>
 	</table>
 	</div>
 	<div id="search_div">	
-		<h4>Search Songs Here</h4>
-		<form class="example" action="action_page.php">
-		  <input type="text" placeholder="Search.." name="search">
-		  <button type="submit"><i class="fa fa-search"></i></button>
+		<p id="search_head">Search here for statistics on any of 100+ songs we've seen:</p>
+		<form class="search_form">
+		  <input type="text" placeholder="Search Songs..." name="song_search" id="song_search">
+		  <button id="search_button"><i class="fa fa-search"></i></button>
 		</form>
 	</div>
 	<div class="ticket_bg_2">
+	</div>
+	<div id="footer_div">
+		<p id="footer_info">&copy; <?php echo date("Y"); ?> Matt English</p>
 	</div>
 </body>
 </html>
