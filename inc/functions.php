@@ -4,9 +4,10 @@ function shows() {
 	try {
 	$shows_results = $db->query(
 	  "SELECT show_id,
-			  show_date, 
-			  show_city, 
-			  show_venue
+			  show_date,
+			  show_venue,
+			  show_city,			  
+			  show_state
 	   FROM shows
 	   ORDER BY show_date ASC"
 	 );

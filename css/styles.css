@@ -1,121 +1,234 @@
+
 * {
 	box-sizing: border-box;
 }
 
 @font-face {
-    font-family: 'Hansief';
-    src: url(../fonts/Hansief.otf);
+	font-family: 'Morganite-Light';
+	src: url(../fonts/Morganite/Morganite-Light.ttf);
 }
 
-
-body {
+body, html {
+	height: 100%;
 	margin: 0px;
-	background: #F3F3F2 ;
-	/* background-image: linear-gradient(to bottom right, #ccf5ff, #fafeff); */
 }
 
-#main_show_div {
-	width: 60%; 
-	float: left;
-	margin: auto; 
-	padding: 30px; 
-	/* background: #fafeff;  */
-	/* -moz-box-shadow: 0 0 20px black; 
-	-webkit-box-shadow: 0 0 20px black; 
-	box-shadow: 0 0 20px black; */
-	font-family: 'Open Sans', sans-serif;
+.ticket_bg {
+	/* The image used */
+	background-image: url('../img/wilco_tix.png');
+
+	/* Full height */
+	height: 105%; 
+
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+	opacity: 0.85;
+}
+
+.ticket_bg_2 {
+	/* The image used */
+	background-image: url('../img/band_pic.jpg');
+
+	/* Full height */
+	height: 70%; 
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+	opacity: 0.85;
+}
+
+#all_shows_div {
+	height: 850px;
+	background-color:#f3f3f3;
+}
+
+#name_div {
+	position: absolute;
+	left: 0;
+	top: 35%;
+	width: 100%;
 	text-align: center;
-	color: #36393B;
+}
+
+h1 {
+	font-size: 27rem;
+	margin: 0px;
+	color: #005995;
+	font-family: 'Morganite-Light', sans-serif;
+}
+
+#arrow_container {
+	position:absolute;
+	width: 50px;
+	height: 50px;
+	margin-left:-25px;
+	left:50%;
+}
+
+#down_arrow {
+	width: 100%;
+	height: auto;
+}
+
+#about_div {
+	background-color: #2c2c2c;
+	padding: 50px 80px;
+}
+
+#about_head {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 2rem;
+	font-weight: 100;
+	font-style: normal;
+	color: #ce9e62;
+	margin: 0px;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+#about_hr {
+	width: 100%;
+	border: 0;
+	height: 1px;
+	background: #005995;
+}
+
+#about_text {
+	text-align: justify;
+	font-family: 'Open Sans', sans-serif;
+	color: #f3f3f3;
+	padding-top: 10px;
+}
+
+#search_div {
+	padding: 50px 80px;
+	background-color: #2c2c2c;
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+}
+
+#search_head {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 1.75rem;
+	font-weight: 100;
+	font-style: normal;
+	color: #F4360B;
+	margin: 0px;
+	padding-bottom: 20px;
+}
+
+#footer_div {
+	height: 45px;
+	background-color: #005995;
+	text-align: center;
+}
+
+#footer_info {
+	padding-top: 5px;
+	margin: 0px;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 1rem;
+	font-weight: 100;
+	font-style: normal;
+	color: #ce9e62;
+}
+
+.search_form {
+	width: 70%;
+	margin: auto;
+}
+
+/* Style the search field */
+form.search_form input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: none;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+form.search_form button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #005995 ;
+  color: white;
+  font-size: 17px;
+  border: none;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.search_form button:hover {
+  background: #008ae6;
+}
+
+/* Clear floats */
+form.search_form::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+	
+#main_show_div {
+	width: 70%;
+    float: left;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    color: #2c2c2c;
+    padding: 40px 40px;
 }
 
 #stats_div {
-	float:right;
-	width: 40%;
-	margin: auto; 
-	padding: 30px; 
-}
-
-#title_div {
-	font-family: 'Roboto', sans-serif;
-	color: #131820 ;
-	padding: 30px;
-	/* border-bottom: 1px solid #F4360B; */
-	margin-top: 150px;
+	float: right;
+    width: 30%;
+    margin: auto;
+    padding: 40px 20px;
 }
 
 #main_show_div table {
-	width: 100%;
+	width: 90%;
 	border-collapse: collapse;
 }
 
-/* #main_show_div tr:nth-child(even) {
-	background-color: #e6faff;
-} */
-
 #main_show_div tbody tr:hover {
-	background-color: #d5f0f6;
+	background-color: #d9d9d9;
+;
 }
 
-th, td {
+td {
 	padding: 7.5px;
 	text-align: left;
-	border-bottom: 1px solid #131820;
-	color: #36393B;
+	border-bottom: 1px solid #005995;
+	color: #2c2c2c;
 }
 
-#home_body { 
-    background: url('../img/wilco_tix_2.png') no-repeat center center fixed;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-} 
+th {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 1.25rem;
+	padding: 7.5px;
+	text-align: left;
+	border-bottom: 1px solid #005995;
+	color: #2c2c2c;
+}
 
 #click_shows {
 	font-family: 'Roboto', sans-serif;
 	font-size: 2rem;
 	margin: auto;
 	text-align: center;
-	color: #131820 ; 
+	color: #2c2c2c ; 
 	padding-top: 30px;
-}
-
-h3 {
-	font-family: 'Roboto', sans-serif;
-	font-size: 2rem;
-	margin: auto;
-	text-align: center;
-	color: #131820 ; 
-}
-
-#name_div h3 {
-	font-family: 'Hansief';
-	font-weight: lighter;
-	font-size: 2rem;
-	margin: -25px auto auto auto;
-	text-align: center;
-	color: #131820 ; 
-}
-
-h1 {
-	font-family: 'Hansief';
-	color: #0aa6c9;
-	font-size: 11rem;
-	font-weight: lighter;
-	margin: auto;
-	text-align: center;
-	padding-top: 275px;
-	text-shadow: 3px 3px 3px rgba(0,0,0, .7);
-	/* letter-spacing: 3px; */
-}
-
-p {
-	font-family: 'Roboto', sans-serif;
-	font-weight: bold;
-	font-size: 1.5rem;
-	margin: auto;
-	text-align: center;
-	color: #131820 ; 
 }
 
 #stats_div p {
@@ -147,48 +260,6 @@ a:visited {
 	color: #F4360B ;
 }
 
-#search_bar {
-	width: 40%;
-	margin: 30px auto;
-}
-
-form.search_form input[type=text] {
-	font-family: 'Roboto', sans-serif;
-	font-weight: lighter;
-    padding: 10px;
-    font-size: 17px;
-    border: none;
-    float: left;
-    width: 80%;
-    background: #ecf4f9;
-}
-
-form.search_form button {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    background: #0AA6C9;
-    color: white;
-    font-size: 20px;
-    border: none;
-    /* border-left: none; */
-    cursor: pointer;
-}
-
-form.search_form button:hover {
-    background: #F4360B ;
-}
-
-form.search_form::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-form.song_form {
-	margin-bottom: 0px;
-}
-
 #main_show_div a {
 	color: #36393B;
 }
@@ -201,117 +272,20 @@ form.song_form {
 	color: #F4360B ;
 }
 
-.header {
-	background: url('../img/wilco_header_sm.jpg') no-repeat center;
-	/* background-color: #0aa6c9; */
-	height: 150px;
-	width: 100%;
-	position: fixed; 
-    top: 0;
+@media only screen and (max-device-width: 770px) {
+	/* .ticket_bg {
+		background-attachment: scroll;
+	} */
+	h1 {
+		font-size: 10rem;
+	}
+	h3 {
+		font-size: 1.5rem;
+	}
+	#name_div {
+		top: 50%;
+	}
+	#arrow_container {
+		bottom: -100px;
+	}
 }
-
-#header_link {
-	float: left;
-	font-family: 'Hansief';
-	font-size: 5rem;
-	text-align: center;
-	padding: 25px 20px;
-	text-shadow: 2px 2px 2px rgba(0,0,0, .5);
-}
-
-.header a {
-	color: #0aa6c9;
-}
-
-.header a:hover {
-	text-decoration: none;
-}
-
-#separator {
-	height: 1px;
-	background-color: #0aa6c9;
-}
-
-/* 
-.header {
-	background: url('../img/wilco_tix.png') no-repeat center;
-	margin: auto;
-}
-
-.header a, a:visited {
-	font-family: 'Hansief';
-	text-shadow: 3px 3px 3px rgba(0,0,0, .7);
-  text-decoration: none;
-}
-
-.navigation li {
-	font-size: 1.5em;
-	font-weight: bolder;
-	list-style: none;
-	text-shadow: 1px 1px 1px rgba(0,0,0, .7);
-	display: inline-block;
-}
-
-.navigation a {
-	padding-left: 10px;
-	padding-right: 10px;
-}
-
-.page-header {
-	font-size: 5em;
-	text-align: left;
-} */
-
-
-/* #search_container {
-	padding-top: 350px;
-}
-
-#search_div {
-	width: 80%; 
-	margin:  25px auto; 
-	padding: 30px; 
-	background: #fafeff; 
-	-moz-box-shadow: 0 0 20px black; 
-	-webkit-box-shadow: 0 0 20px black; 
-	box-shadow: 0 0 20px black;
-	font-family: 'LiberationSans';
-	text-align: center;
-}
-
-#search_div form {
-    overflow: hidden;
-    display: block;
-	margin: auto;
-}
-
-#search_div form label {
-    margin-top:12px;
-    font-size: 1.15em;
-    color: #333333;
-    font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif; 
-    font-weight: normal;
-    line-height: 1.2;
-}
-
-#search_div form input {
-    border: 1px solid #DDDDDD;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    border-radius: 0px;
-    -moz-border-radius: 0px;
-    -khtml-border-radius: 0px;
-    -webkit-border-radius: 0px;
-}
-
-
-#search_div form input[type='text']{
-    width: 22%;
-    display: inline!important;
-    background: #F9F9F9;
-    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif; 
-    font-size: 1.1em;
-    line-height: 1.4;
-    padding: 6px;
-} */
