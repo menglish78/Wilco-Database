@@ -24,12 +24,12 @@ function song_rank() {
 	try {
 	$rank_results = $db->query(
 	  "SELECT cm.song_id, COUNT(*) AS magnitude,
-			   s.song_title
-		FROM concert_matrix cm
-		JOIN songs s ON cm.song_id = s.song_id
-		GROUP BY cm.song_id 
-		ORDER BY magnitude DESC
-		LIMIT 10"
+			  s.song_title
+	   FROM concert_matrix cm
+	   JOIN songs s ON cm.song_id = s.song_id
+	   GROUP BY cm.song_id 
+	   ORDER BY magnitude DESC
+	   LIMIT 10"
 	 );
 	} catch (Exception $e) {
 	echo "Unable to retrieve results";
@@ -39,7 +39,7 @@ function song_rank() {
 	return $song_rank;
 }
 
-function song_count() {
+function all_song_count() {
 	include("inc/connect.php");
 	try {
 	$count_results = $db->query(
@@ -50,8 +50,55 @@ function song_count() {
 	echo "Unable to retrieve results";
 	exit;
 	}
-	$song_count = $count_results->fetchALL();
-	return $song_count;
+	$all_song_count = $count_results->fetch();
+	return $all_song_count;
+}
+
+function song_stats() {
+    include("inc/connect.php");
+	$song_title = addslashes($_GET['song_title']);
+	//$safe_title = htmlspecialchars_decode($song_title);
+	try {
+	$results = $db->query(
+	  "select cm.show_id,
+		      sh.show_date,
+		      sh.show_city,
+		      sh.show_state,
+		      sh.show_venue
+	   from concert_matrix cm
+	   join shows sh on cm.show_id = sh.show_id
+	   join songs s on cm.song_id = s.song_id
+	   where s.song_title LIKE '%".$song_title."%'"
+	 );
+	} catch (Exception $e) {
+	echo "Unable to retrieve results";
+	exit;
+	}
+	
+	$song_info = $results->fetchALL();
+	
+	return $song_info;
+}
+
+function song_count() {
+    include("inc/connect.php");
+	$song_title = addslashes($_GET['song_title']);
+	//$safe_title = htmlspecialchars_decode($song_title);
+	try {
+	$results = $db->query(
+	  "select count(*) as times_played,
+	          s.song_title
+	   from concert_matrix cm
+	   join songs s on cm.song_id = s.song_id
+	   where s.song_title LIKE '%".$song_title."%'"
+	 );
+	} catch (Exception $e) {
+	echo "Unable to retrieve results";
+	exit;
+	}
+	
+	$times_played = $results->fetch();
+	return $times_played;
 }
 
 

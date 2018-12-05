@@ -222,15 +222,6 @@ th {
 	color: #2c2c2c;
 }
 
-#click_shows {
-	font-family: 'Roboto', sans-serif;
-	font-size: 2rem;
-	margin: auto;
-	text-align: center;
-	color: #2c2c2c ; 
-	padding-top: 30px;
-}
-
 #stats_div p {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: normal;

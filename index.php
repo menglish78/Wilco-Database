@@ -6,6 +6,7 @@
 	
 	$wilco_shows = shows();
 	$top_songs = song_rank();
+	$count_all_songs = all_song_count();
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +14,6 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <link rel="stylesheet" href="./css/styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto|Roboto+Condensed" rel="stylesheet">
@@ -34,6 +34,24 @@
 				}
 			});
 		});
+		
+		/* var searchSong = function() {
+			$(".search_form").submit(false);
+			//var song_title = ($("#song_search").val().replace(/I'm/g, "").split("'s").pop());
+			var song_title = $("#song_search").val();
+			$.ajax(
+			{
+				type: "GET",
+				url: "song_info.php",
+				data: { song_title: song_title },
+				success: function(response)
+				{
+					window.location = "song_info.php?song_title="+song_title;
+				}
+			});
+		}
+		
+		$("#search_button").on('click', searchSong); */
 	});
 </script>
 <style>
@@ -117,7 +135,7 @@
 		</div>
 	</div>
 	<div id="search_div">	
-		<p id="search_head">Search here for statistics on any of 100+ songs we've seen:</p>
+		<p id="search_head">Search here for statistics on any of the <?php echo $count_all_songs[0]; ?> songs we've seen:</p>
 		<form class="search_form">
 		  <input type="text" placeholder="Search Songs..." name="song_search" id="song_search">
 		  <button id="search_button"><i class="fa fa-search"></i></button>
