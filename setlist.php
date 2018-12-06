@@ -5,6 +5,7 @@ error_reporting(E_ALL);
 
 include("inc/header.php");
 
+
 function setlist()
 {
 	include("inc/connect.php");
@@ -54,6 +55,7 @@ $wilco_setlist = setlist();
 $show = show_info();
 
 ?>
+<div id="info_div">
 <div id="title_div">
 	<?php
 	  $date = date_create($show[0]);
@@ -63,7 +65,7 @@ $show = show_info();
 	  $state = $show[3];
 	  $show_notes = $show[4];
 	  echo "<h3>".$venue." - ".$city.", ".$state."</h3>".
-		   "<h3>".$date_format."</h3>";
+		   "<h5>".$date_format."</h5>";
 	 ?>
 </div>
 <div id="main_show_div">
@@ -87,13 +89,12 @@ $show = show_info();
 	?>
 		</tbody>
 	</table>
-	<table>
-		<tr><td><a href="shows.php">Back</a> to list of shows.</td></tr>
-	</table>
 </div>
 <div id="stats_div">
 <p><?php echo $show_notes ?></p>
 </div>
+</div>
 
-	
-</body>
+<?
+include("inc/footer.php");
+?>

@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto|Roboto+Condensed" rel="stylesheet">
 </head>
 <body>
-  <div class="header">
+  <div class="header" id="my_header">
 	  <div id="header_link">
 		<a href="../Wilco-Database">BEING THERE</a>
 	  </div>

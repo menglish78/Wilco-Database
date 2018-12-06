@@ -8,14 +8,16 @@
 	$song_information = song_stats();
 	$count = song_count();
 ?>
-<div id="title_div">
+
+<div id="info_div">
+	<div id="title_div">
 	 <?php
 	  if ($count[0] > 0)
 	  {
 		echo "<h3>".$count[1]."</h3>";
+	  
 	?>
 	</div>	
-<div id="all_shows_div">
 	<div id="main_show_div">
 		<table class='show_table'>
 			<thead>
@@ -69,9 +71,11 @@
 	  }
 	  else
 	  {
-		echo "I'm sorry, but we can't find that song in our database. Please search again.<br/>
-			  <a href='javascript:history.back(1);'>Go Back</a>";
+		echo "<div id='title_div'>I'm sorry, but we can't find that song in our database. Please search again.<br/>
+			  <a href='javascript:history.back(1);'>Go Back</a></div>";
 	  }
 	  ?>
 
-</body>
+<?
+include("inc/footer.php");
+?>
