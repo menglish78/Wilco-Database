@@ -51,6 +51,7 @@ body, html {
 
 #info_div {
 	overflow: auto;
+	min-height: 100%;
 	background-color: #f3f3f3;
 }
 
