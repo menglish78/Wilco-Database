@@ -74,7 +74,7 @@
 	<div id="about_div">
 		<p id="about_head">A Personal Wilco Concert Database</p>
 		<hr id="about_hr"/>
-		<p id="about_text">My name is Matt. My wife Lindsay and I really enjoy seeing Wilco perform live. We've been lucky enough to see them quite a few times. We've gone to shows with friends, family and, of course, a lot of strangers who happen to also love seeing Wilco live. We've seen a couple of different line-ups of the band and we've seen Jeff Tweedy solo and with his "family band" Tweedy. I think it's safe to say, we've never been disappointed. We thought it would be nice to have some sort of chronicle of these experiences. That's what this site is. It's a way for us to preserve and catalog our experiences with our favorite band.</p>
+		<p id="about_text">My name is Matt. My wife, Lindsay, and I really enjoy seeing Wilco perform live. We've been lucky enough to see them quite a few times. We've gone to shows with friends, family and, of course, a lot of strangers who happen to also love seeing Wilco live. We've seen a couple of different line-ups of the band and we've seen Jeff Tweedy solo and with his "family band" Tweedy. I think it's safe to say, we've never been disappointed. We thought it would be nice to have some sort of chronicle of these experiences. That's what this site is. It's a way for us to preserve and catalog our experiences with our favorite band.</p>
 	</div>
 	<div id="all_shows_div">
 		<div id="main_show_div">

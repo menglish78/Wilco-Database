@@ -3,53 +3,8 @@
 ini_set('display_errors', 1); 
 error_reporting(E_ALL);
 
+include("inc/functions.php");
 include("inc/header.php");
-
-
-function setlist()
-{
-	include("inc/connect.php");
-	$show_id = $_GET['show_id'];
-	try 
-	{
-		$full_setlist = $db->query(
-			"SELECT cm.song_order, 
-			        cm.song_id,
-					so.song_title
-			 FROM concert_matrix cm 
-			 JOIN songs so on cm.song_id = so.song_id 
-			 WHERE cm.show_id = ".$show_id
-		    );	
-	} catch (Exception $e) 
-	{
-		echo "Unable to retrieve results";
-		exit;
-	}
-	$setlist = $full_setlist->fetchALL();
-	return $setlist;
-}
-
-function show_info() {
-    include("inc/connect.php");
-	$show_id = $_GET['show_id'];
-	try {
-		$show_head = $db->query(
-		  "select show_date,
-		          show_venue,
-				  show_city,
-				  show_state,
-				  show_notes
-		   from shows
-		   where show_id = ".$show_id
-	 );
-	} catch (Exception $e) {
-	echo "Unable to retrieve results";
-	exit;
-	}
-	
-	$show_info = $show_head->fetch();
-	return $show_info;
-}
 
 $wilco_setlist = setlist();
 $show = show_info();

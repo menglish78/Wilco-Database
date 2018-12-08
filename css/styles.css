@@ -53,11 +53,11 @@ body, html {
 	position:relative; 
 	height:auto !important; 
 	min-height:100%; 
+	background-color: #f3f3f3;
 }
 
 #info_div {
 	overflow: hidden;
-	background-color: #f3f3f3;
 	padding-bottom: 45px;
 }
 
@@ -145,6 +145,13 @@ h1 {
 	text-align: center;
 }
 
+#footer_div {
+	height: 45px;
+	width: 100%;
+	background-color: #005995;
+	text-align: center;
+}
+
 #footer_info {
 	padding-top: 5px;
 	margin: 0px;
@@ -200,6 +207,7 @@ form.search_form::after {
 	font-size: 2rem;
 	padding-top: 10px;
 	text-align: center;
+	color: #F4360B;
 }
 
 #title_div h3 {
