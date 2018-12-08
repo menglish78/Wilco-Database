@@ -1,7 +1,7 @@
-	<div id="footer_div">
+	<div id="footer">
 		<p id="footer_info">&copy; <?php echo date("Y"); ?> Matt English</p>
 	</div>
-	
+</div>
 <script>
 	window.onscroll = function() {myFunction()};
 

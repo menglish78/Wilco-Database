@@ -49,10 +49,16 @@ body, html {
 	background-color:#f3f3f3;
 }
 
+#container {
+	position:relative; 
+	height:auto !important; 
+	min-height:100%; 
+}
+
 #info_div {
-	overflow: auto;
-	min-height: 100%;
+	overflow: hidden;
 	background-color: #f3f3f3;
+	padding-bottom: 45px;
 }
 
 #name_div {
@@ -130,7 +136,10 @@ h1 {
 	padding-bottom: 20px;
 }
 
-#footer_div {
+#footer {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
 	height: 45px;
 	background-color: #005995;
 	text-align: center;
@@ -204,20 +213,20 @@ form.search_form::after {
 }
 	
 #main_show_div {
-	width: 70%;
+	width: 60%;
     float: left;
     margin: auto;
     font-family: 'Open Sans', sans-serif;
     text-align: center;
     color: #2c2c2c;
-    padding: 40px 40px;
+    padding: 40px 0px 40px 40px;
 }
 
 #stats_div {
 	float: right;
-    width: 30%;
+    width: 40%;
     margin: auto;
-    padding: 40px 20px;
+    padding: 40px 60px 40px 0px;
 }
 
 #main_show_div table {
@@ -249,7 +258,8 @@ th {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: normal;
 	font-size: medium;
-	text-align: left;
+	text-align: justify;
+	line-height: 1.5;
 	padding: 3px;
 }
 
@@ -300,6 +310,7 @@ a:visited {
 	color: #005995;
 	font-family: 'Morganite-Light', sans-serif;
 	font-size: 4em;
+	font-weight: 700;
 }
 
 #header_link a:hover {
@@ -313,7 +324,7 @@ a:visited {
 }
 
 .sticky + #info_div {
-  padding-top: 102px;
+  padding-top: 75px;
 }
 
 @media only screen and (max-device-width: 770px) {

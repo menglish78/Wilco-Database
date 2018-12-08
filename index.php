@@ -126,7 +126,7 @@
 					$song_id = $most_played[0];
 					echo "<tbody>
 							<tr><td>" .
-								"<a href='song_info.php?song_title=".$song."' id='show_more_".$song."' value='".$song."' class='song_link'>".$song."</a> (".$count.")<input type='hidden' id='song' value='".$song."'>".
+								"<a href='song_info.php?song_title=".urlencode($song)."' id='show_more_".$song."' value='".$song."' class='song_link'>".$song."</a> (".$count.")<input type='hidden' id='song' value='".$song."'>".
 							"</td></tr>
 						  </tbody>";
 				  }
